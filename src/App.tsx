@@ -10,12 +10,12 @@ const App = () => {
 
 	const handleAdd = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+		if (!todo) return;
 		if (todo) {
 			setTodos([...todos, { id: Date.now(), todo, isDone: false }]);
 			setTodo("");
 		}
 	};
-
 
 	return (
 		<div className="App">
